@@ -12,8 +12,8 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 soup = BeautifulSoup(html, 'lxml')
-print(soup.prettify())
-print(soup.title.string)
+print(soup.prettify())  # 把要解析的字符串以标准的缩进格式输出。自动更正格式，是在初始化 BeautifulSoup 时就完成了。
+print(soup.title.string)  # 输出 HTML 中 title 节点的文本内容。
 # <html>
 #  <head>
 #   <title>
