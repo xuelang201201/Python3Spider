@@ -19,6 +19,3 @@ except Exception as reason:
     print('Failed: ' + str(reason))
     db.rollback()
 db.close()
-
-
-
