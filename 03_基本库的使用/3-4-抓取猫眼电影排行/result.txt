@@ -30,7 +30,7 @@
 {"index": "30", "image": "https://p0.meituan.net/movie/8959888ee0c399b0fe53a714bc8a5a17460048.jpg@160w_220h_1e_1c", "title": "楚门的世界", "actor": "金·凯瑞,劳拉·琳妮,诺亚·艾默里奇", "time": "1998(罗马尼亚)", "score": "8.9"}
 {"index": "31", "image": "https://p0.meituan.net/movie/f9356a376358f1576da3263d998eca7a94624.jpg@160w_220h_1e_1c", "title": "飞屋环游记", "actor": "爱德华·阿斯纳,乔丹·长井,鲍勃·彼德森", "time": "2009-08-04", "score": "8.9"}
 {"index": "32", "image": "https://p0.meituan.net/movie/0127b451d5b8f0679c6f81c8ed414bb2432442.jpg@160w_220h_1e_1c", "title": "哈尔的移动城堡", "actor": "倍赏千惠子,木村拓哉,美轮明宏", "time": "2004-09-05(意大利)", "score": "8.9"}
-{"index": "33", "image": "https://p1.meituan.net/movie/b553d13f30100db731ab6cf45668e52d94703.jpg@160w_220h_1e_1c", "title": "上帝之城", "actor": "亚历桑德雷·罗德里格斯,艾莉丝·布拉加,莱安德鲁·菲尔米诺", "time": "2002-05-18(戛纳电影节)", "score": "8.9"}
+{"index": "33", "image": "https://p1.meituan.net/movie/b553d13f30100db731ab6cf45668e52d94703.jpg@160w_220h_1e_1c", "title": "上帝之城", "actor": "亚历桑德雷·罗德里格斯,艾莉丝·布拉加,莱安德鲁·菲尔米诺", "time": "2002(俄罗斯)", "score": "8.9"}
 {"index": "34", "image": "https://p0.meituan.net/movie/7b7d1f8aa36d7a15463ce6942708a1a7265296.jpg@160w_220h_1e_1c", "title": "美丽心灵", "actor": "罗素·克洛,詹妮弗·康纳利,艾德·哈里斯", "time": "2001-12-13(美国)", "score": "8.8"}
 {"index": "35", "image": "https://p0.meituan.net/movie/283292171619cdfd5b240c8fd093f1eb255670.jpg@160w_220h_1e_1c", "title": "肖申克的救赎", "actor": "蒂姆·罗宾斯,摩根·弗里曼,鲍勃·冈顿", "time": "1994-09-10(加拿大)", "score": "9.5"}
 {"index": "36", "image": "https://p1.meituan.net/movie/580d81a2c78bf204f45323ddb4244b6c6821175.jpg@160w_220h_1e_1c", "title": "美丽人生", "actor": "罗伯托·贝尼尼,尼可莱塔·布拉斯基,乔治·坎塔里尼", "time": "2020-01-03", "score": "9.3"}

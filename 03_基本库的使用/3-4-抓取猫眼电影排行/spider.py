@@ -2,6 +2,7 @@ import json
 import requests
 import re
 import time
+import numpy
 
 from requests.exceptions import RequestException
 
@@ -58,4 +59,4 @@ if __name__ == '__main__':
     for i in range(10):
         main(offset=i * 10)
         # 猫眼多了反爬虫，如果速度过快，则会无响应，所以这里增加了一个延时等待。
-        time.sleep(1)
+        time.sleep(numpy.random.rand() * 5)
