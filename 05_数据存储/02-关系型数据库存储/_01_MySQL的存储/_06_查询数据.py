@@ -15,5 +15,5 @@ try:
     print('Results Type:', type(results))
     for row in results:
         print(row)
-except Exception as reason:
-    print('Error: ' + str(reason))
+except:
+    print('Error')
