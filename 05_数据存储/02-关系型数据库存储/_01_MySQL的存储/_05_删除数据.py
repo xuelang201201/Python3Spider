@@ -12,7 +12,7 @@ try:
     print('Successful')
     db.commit()
 except Exception as reason:
-    print('Failed: ' + str(reason))
+    # print('Failed: ' + str(reason))
     db.rollback()
 
 db.close()
