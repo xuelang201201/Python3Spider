@@ -7,8 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 """1.隐式等待"""
 browser = webdriver.Chrome()
 browser.implicitly_wait(10)
-browser.get('https://www.zhihu.com/explore')
-input_ = browser.find_element_by_class_name('AppHeader-TabsLink')
+browser.get('https://book.douban.com/')
+input_ = browser.find_element_by_class_name('nav-logo')
 print(input_)
 
 """2.显式等待：效果比隐式等待更好"""
