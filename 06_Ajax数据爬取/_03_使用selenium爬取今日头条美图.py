@@ -56,7 +56,7 @@ class GetCookie(object):
             if r.status_code == 200:
                 return r.json()
             else:
-                print('requests get_page error!')
+                print('Requests get page error!')
         except requests.ConnectionError:
             return None
 
@@ -74,7 +74,7 @@ class GetCookie(object):
                             result = re.search(images_pattern, r.text)
                             if result:
                                 b_url = 'http://p3.pstatp.com/origin/pgc-image/'
-                                up = re.compile('url(.*?)"width', re.S)
+                                up = re.compile(r'url(.*?)"width', re.S)
                                 results = re.findall(up, result.group(1))
                                 if results:
                                     for result in results:
@@ -86,7 +86,7 @@ class GetCookie(object):
                                 images = i.get('image_list')
                                 for image in images:
                                     origin_image = re.sub("list.*?pgc-image", "large/pgc-image",
-                                                          image.get('url'))  # 改成origin/pgc-image是原图
+                                                          image.get('url'))  # 改成 origin/pgc-image 是原图
                                     yield {
                                         'image': origin_image,
                                         'title': title
@@ -128,4 +128,4 @@ if __name__ == '__main__':
     groups = [x * 20 for x in range(0, 3)]
     p.map(p_work, groups)
     end = time.perf_counter()
-    print('程序运行时间: ' + str(end - start) + '秒')
+    print('Running Time: ' + str(end - start) + 's')
