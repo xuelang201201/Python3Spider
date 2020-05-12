@@ -42,12 +42,9 @@ def parse_page(json):
         items = json.get('data').get('cards')
         for item in items:
             item = item.get('mblog', {})
-            weibo = {}
-            weibo['id'] = item.get('id')
-            weibo['text'] = pq(item.get('text')).text()
-            weibo['attitudes'] = item.get('attitudes_count')
-            weibo['comments'] = item.get('comments_count')
-            weibo['reposts'] = item.get('reposts_count')
+            weibo = {'id': item.get('id'), 'text': pq(item.get('text')).text(),
+                     'attitudes': item.get('attitudes_count'), 'comments': item.get('comments_count'),
+                     'reposts': item.get('reposts_count')}
             yield weibo
 
 
