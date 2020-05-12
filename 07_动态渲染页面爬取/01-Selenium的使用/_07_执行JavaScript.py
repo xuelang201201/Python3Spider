@@ -1,3 +1,6 @@
+"""
+基本上 API 没有提供的所有功能都可以用执行 JavaScript 的方式来实现了。
+"""
 from selenium import webdriver
 
 browser = webdriver.Chrome()
