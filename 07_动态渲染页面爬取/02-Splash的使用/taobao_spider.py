@@ -11,20 +11,19 @@ from urllib.parse import quote
 from pyquery import PyQuery as pq
 from selenium.webdriver import ActionChains
 
-KEYWORD = '华为'
+KEYWORD = 'iPad'
 MONGO_URL = 'localhost'
 MONGO_DB = 'taobao'
 MONGO_COLLECTION = 'productions'
 MAX_PAGE = 100
 
-client = pymongo.MongoClient(MONGO_URL)
-db = client[MONGO_DB]
-
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 browser = webdriver.Chrome(options=options)
 # browser = webdriver.Chrome()
-wait = WebDriverWait(browser, 10)
+wait = WebDriverWait(browser, 30)  # 建议设置时长 30 秒以上
+client = pymongo.MongoClient(MONGO_URL)
+db = client[MONGO_DB]
 
 
 def try_login():
