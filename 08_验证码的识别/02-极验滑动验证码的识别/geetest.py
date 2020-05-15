@@ -48,15 +48,15 @@ class CrackGeetest:
         :return: 验证码位置元组
         """
         img = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'geetest_canvas_img')))
-        div_img = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, "geetest_div_img")))
-        time.sleep(2)
+        fullbg = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, "geetest_canvas_fullbg")))
+        # time.sleep(2)
 
         if isFull:
             self.browser.execute_script(
-                "arguments[0].setAttribute(arguments[1], arguments[2])", div_img, "style", "")
+                "arguments[0].setAttribute(arguments[1], arguments[2])", fullbg, "style", "")
         else:
             self.browser.execute_script(
-                "arguments[0].setAttribute(arguments[1], arguments[2])", div_img, "style", "display: none")
+                "arguments[0].setAttribute(arguments[1], arguments[2])", fullbg, "style", "display: none")
 
         location = img.location
         size = img.size
@@ -123,7 +123,7 @@ class CrackGeetest:
         # 取两个图片的像素点
         pixel1 = image1.load()[x, y]
         pixel2 = image2.load()[x, y]
-        threshold = 60
+        threshold = 200
         if abs(pixel1[0] - pixel2[0]) < threshold and abs(pixel1[1] - pixel2[1]) < threshold and abs(
                 pixel1[2] - pixel2[2]) < threshold:
             return True
@@ -190,38 +190,41 @@ class CrackGeetest:
         print('登录成功')
 
     def crack(self):
-        # 输入用户名密码
-        self.open()
-        # 点击验证按钮
-        button = self.get_geetest_button()
-        button.click()
-        # 获取验证码图片
-        image1 = self.get_geetest_image('captcha1.png', True)
-        # 点按呼出缺口
-        slider = self.get_slider()
-        # slider.click()
-        # 获取带缺口的验证码图片
-        image2 = self.get_geetest_image('captcha2.png', False)
-        # 获取缺口位置
-        gap = self.get_gap(image1, image2)
-        print('缺口位置', gap)
-        # 减去缺口位移
-        gap -= BORDER
-        # 获取移动轨迹
-        track = self.get_track(gap)
-        print('滑动轨迹', track)
-        # 拖动滑块
-        self.move_to_gap(slider, track)
+        try:
+            # 输入用户名密码
+            self.open()
+            # 点击验证按钮
+            button = self.get_geetest_button()
+            button.click()
+            # 获取验证码图片
+            image1 = self.get_geetest_image('captcha1.png', True)
+            # 点按呼出缺口
+            slider = self.get_slider()
+            # slider.click()
+            # 获取带缺口的验证码图片
+            image2 = self.get_geetest_image('captcha2.png', False)
+            # 获取缺口位置
+            gap = self.get_gap(image1, image2)
+            print('缺口位置', gap)
+            # 减去缺口位移
+            gap -= BORDER
+            # 获取移动轨迹
+            track = self.get_track(gap)
+            print('滑动轨迹', track)
+            # 拖动滑块
+            self.move_to_gap(slider, track)
 
-        success = self.wait.until(
-            EC.text_to_be_present_in_element((By.CLASS_NAME, 'geetest_success_radar_tip_content'), '验证成功'))
-        print(success)
+            success = self.wait.until(
+                EC.text_to_be_present_in_element((By.CLASS_NAME, 'geetest_success_radar_tip_content'), '验证成功'))
+            print(success)
 
-        # 失败后重试
-        if not success:
-            self.crack()
-        else:
-            self.login()
+            # 失败后重试
+            if not success:
+                self.crack()
+            else:
+                self.login()
+        except Exception as reason:
+            print("Error: " + str(reason))
 
 
 if __name__ == '__main__':
