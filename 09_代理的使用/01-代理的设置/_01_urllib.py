@@ -22,7 +22,7 @@ def type_basic():
 
 
 def type_socks5():
-    """SOCKS5类型的代理设置方法 pip3 install PySocks"""
+    """SOCKS5类型的代理设置方法 需要 pip3 install PySocks"""
 
     import socks
     import socket
